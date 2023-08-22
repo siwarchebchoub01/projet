@@ -1,0 +1,6 @@
+.prt{
+    display: flex;
+    position:top;
+    margin-left: 150px;
+    gap: 100px;
+}
