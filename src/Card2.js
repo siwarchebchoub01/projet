@@ -6,7 +6,7 @@ import arr from './product';
 function card2() {
   return (
     <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src="https://static.vecdn.net/images/content/dp/person/vip-charter-new.jpg"/>
+    <Card.Img variant="top" src={arr[1].img}/>
     <Card.Body>
       <Card.Title>{arr[1].name}</Card.Title>
       <Card.Text>

@@ -1,21 +1,22 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import arr from "./product"
 
-function card() {
+function Cardd() {
   return (
     <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src="https://static.vecdn.net/images/content/dp/person/vip-charter-new.jpg" />
+    <Card.Img variant="top" src={arr[0].img}/>
     <Card.Body>
-      <Card.Title>Card Title</Card.Title>
+      <Card.Title>{arr[0].name}</Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content.
+      {arr[0].description}.
       </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+      <h2>{arr[0].price}</h2>
+      <Button variant="primary ">ajouter</Button>
     </Card.Body>
   </Card>
   )
 }
 
-export default card
+export default Cardd
