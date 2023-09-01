@@ -1,35 +1,33 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import React, { useState } from "react";
 
-function Navv() {
+function Navbar({Add}) {
+
+  const [title, settitle] = useState("")
+  const [description, setdescription] = useState("")
+  const [rating, setrating] = useState("")
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+  Add(title,description,rating)
+  };
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-    <Container>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-  )
+    <div  id="nav" >  
+      <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand">MOVIES</a>
+          <form className="d-flex" onSubmit={handleSearchSubmit}>
+            <input className="form-control me-2"  onChange={(e)=>settitle(e.target.value)}  />
+            <input className="form-control me-2"  onChange={(e)=>setdescription(e.target.value)} />
+            <input className="form-control me-2"  onChange={(e)=>setrating(e.target.value)}  />
+            <button className="btn btn-outline-success" type="submit">
+              Add
+            </button>
+          </form>
+          
+        </div>
+      </nav>
+    </div>
+  );
 }
 
-export default Navv
+export default Navbar;
